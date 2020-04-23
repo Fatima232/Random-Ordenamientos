@@ -2,6 +2,10 @@
 DESCRIPCION:
 Main
 1 Insertar(numero de elementos que indique el usuario-n- de 1 a 10 enteros)
+---arreglo 10000 
+---1.1 Insertar por teclado
+---1.2 Aleatorio
+---1.3 Regresar
 2 Mostrar arreglo
 3 Busqueda
  3.1 Secuencial con arreglo Desordenado
@@ -39,6 +43,10 @@ public class TiempoEjecucionRamirezBriseño {
            opcion=leer.nextByte();
            switch(opcion){
                case 1:
+                   System.out.println("_____I N S E R T A R_____/n " +
+                           "Opcion 1:Ingreso manual/n" +
+                           "Opcion 2:Random/n" +
+                           "Opcion 3:Regresar");
                    boolean cambio = b.insertar();
                    if (cambio) {
                        arreglo2=false;

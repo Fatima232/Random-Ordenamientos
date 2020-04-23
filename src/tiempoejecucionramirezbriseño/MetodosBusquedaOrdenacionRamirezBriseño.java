@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class MetodosBusquedaOrdenacionRamirezBriseño {
     Scanner leer=new Scanner(System.in);
     
-    byte tamaño=10;
+    int tamaño=10000;
     int n_datos=0;
     int numeros[];
     int num=0,numero;
