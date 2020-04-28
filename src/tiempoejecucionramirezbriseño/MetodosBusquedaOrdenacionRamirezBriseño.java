@@ -12,10 +12,12 @@ Fecha:
  */
 package tiempoejecucionramirezbriseño;
 import java.util.Scanner;
+import java.util.Random;
 public class MetodosBusquedaOrdenacionRamirezBriseño {
     Scanner leer=new Scanner(System.in);
+    static Random rnd=new Random();
     
-    byte tamaño=10;
+    int tamaño=10000;
     int n_datos=0;
     int numeros[];
     int num=0,numero;
@@ -24,7 +26,7 @@ public class MetodosBusquedaOrdenacionRamirezBriseño {
         boolean  cambio = false;
         if(n_datos<=tamaño){
         System.out.println("¿Cuantos numeros vas a ingresar?");
-        num=leer.nextByte();
+        num=leer.nextInt();
         System.out.println("----------------------");
         
         int auxNum[] = new int[n_datos];//pasando arreglo
@@ -42,7 +44,7 @@ public class MetodosBusquedaOrdenacionRamirezBriseño {
                try{//Atrapar EXEPCIONES los errores
                     for (int i = n_datos; i < num+n_datos; i++) {
                     
-                    numeros[i]=leer.nextByte();
+                    numeros[i]=leer.nextInt();
                    
                   }
                n_datos = n_datos+num;// n_datos += num;
@@ -53,6 +55,35 @@ public class MetodosBusquedaOrdenacionRamirezBriseño {
           }
           return cambio;
         } 
+    void insertarrandom(){
+        boolean  cambio1 = false;
+        if(n_datos<=tamaño){
+        System.out.println("¿Cuantos numeros vas a ingresar?");
+        num=leer.nextInt();
+        System.out.println("----------------------");
+        
+        int auxNum[] = new int[n_datos];//pasando arreglo
+         if (n_datos != 0) {
+                System.arraycopy(numeros,0,auxNum,0,n_datos);//arreglo,desde donde,arreglo a copiar,desde donde,datos
+            }
+                if(n_datos+num>tamaño){
+            System.out.println(n_datos>0?"Tienes ingresado "+n_datos+" solo puedes ingresar "+(tamaño-n_datos)+" mas":"Memoria insuficiente");//operacion ternaria
+        }else{
+               numeros = new int[num+n_datos];//pase el arreglo a otro
+               if (n_datos != 0) {
+                   System.arraycopy(auxNum,0,numeros,0,n_datos);//copiar arreglo
+                   //cambio = true;
+               }
+                    for (int i = 0; i < numeros.length; i++) {
+                    numeros[i]=(int)(rnd.nextDouble()*100.0);
+                    numeros[i]=leer.nextInt();
+                   
+                  }
+               n_datos = n_datos+num;// n_datos += num;
+            }
+          }
+          //return cambio;
+    }
     void mostrar(){
         System.out.println("--Contenido del arreglo--");
         for (int i = 0; i < n_datos; i++) {

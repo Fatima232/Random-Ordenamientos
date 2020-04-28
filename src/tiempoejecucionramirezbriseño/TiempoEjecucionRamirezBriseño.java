@@ -25,7 +25,7 @@ public class TiempoEjecucionRamirezBriseño {
     public static void main(String[] args) {
        Scanner leer=new Scanner(System.in);
    
-      byte opcion,opb,opo;
+      byte opcion,opb,opo,opi;
       boolean arreglo=false;
       boolean arreglo2=false;
       boolean arreglo3=false;
@@ -39,12 +39,24 @@ public class TiempoEjecucionRamirezBriseño {
            opcion=leer.nextByte();
            switch(opcion){
                case 1:
-                   boolean cambio = b.insertar();
-                   if (cambio) {
+                   System.out.println("_____I N S E R T A R _____\n" +
+                           "opcion 1:Manual\n" +
+                           "Opcion 2:Random\n" +
+                           "Opcion 3:Regresar");
+                   opi=leer.nextByte();
+                   switch(opi){
+                       case 1:
+                            boolean cambio = b.insertar();
+                            if (cambio) {
                        arreglo2=false;
                        arreglo3=false;
                    }
                    arreglo=true;
+                       break;
+                       case 2:
+                            b.insertarrandom();
+                       case 3:
+                   }
                break;
                case 2:
                   if(arreglo==true){
