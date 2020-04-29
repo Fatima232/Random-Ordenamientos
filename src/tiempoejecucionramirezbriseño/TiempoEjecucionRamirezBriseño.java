@@ -54,7 +54,12 @@ public class TiempoEjecucionRamirezBriseño {
                    arreglo=true;
                        break;
                        case 2:
-                            b.insertarrandom();
+                            boolean cambio1 = b.insertarrandom();
+                           if (cambio1) {
+                       arreglo2=false;
+                       arreglo3=false;
+                   }
+                   arreglo=true;
                        case 3:
                    }
                break;

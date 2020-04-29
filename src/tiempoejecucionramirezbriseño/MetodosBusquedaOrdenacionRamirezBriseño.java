@@ -55,7 +55,7 @@ public class MetodosBusquedaOrdenacionRamirezBriseño {
           }
           return cambio;
         } 
-    void insertarrandom(){
+    boolean insertarrandom(){
         boolean  cambio1 = false;
         if(n_datos<=tamaño){
         System.out.println("¿Cuantos numeros vas a ingresar?");
@@ -72,17 +72,17 @@ public class MetodosBusquedaOrdenacionRamirezBriseño {
                numeros = new int[num+n_datos];//pase el arreglo a otro
                if (n_datos != 0) {
                    System.arraycopy(auxNum,0,numeros,0,n_datos);//copiar arreglo
-                   //cambio = true;
+                   cambio1 = true;
                }
                     for (int i = 0; i < numeros.length; i++) {
                     numeros[i]=(int)(rnd.nextDouble()*100.0);
-                    numeros[i]=leer.nextInt();
-                   
+                  //  numeros[i]=leer.nextInt();
+                        System.out.println(numeros[i]);
                   }
                n_datos = n_datos+num;// n_datos += num;
             }
           }
-          //return cambio;
+          return cambio1;
     }
     void mostrar(){
         System.out.println("--Contenido del arreglo--");
