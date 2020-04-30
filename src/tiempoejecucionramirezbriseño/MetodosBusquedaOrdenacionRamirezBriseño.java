@@ -74,12 +74,16 @@ public class MetodosBusquedaOrdenacionRamirezBriseño {
                    System.arraycopy(auxNum,0,numeros,0,n_datos);//copiar arreglo
                    cambio1 = true;
                }
-                    for (int i = 0; i < numeros.length; i++) {
+                try{//Atrapar EXEPCIONES los errores
+                    for (int i = n_datos; i < numeros.length; i++) {
                     numeros[i]=(int)(rnd.nextDouble()*100.0);
                   //  numeros[i]=leer.nextInt();
                         System.out.println(numeros[i]);
                   }
                n_datos = n_datos+num;// n_datos += num;
+               }catch(Exception  e){
+                   System.out.println("El valor que ingresaste no es entero");
+               }
             }
           }
           return cambio1;
