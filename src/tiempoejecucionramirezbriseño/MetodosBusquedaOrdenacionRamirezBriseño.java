@@ -193,12 +193,6 @@ public class MetodosBusquedaOrdenacionRamirezBriseño {
         if(j+1<der){
            quicksortNum(j+1,der); 
         }   
-      }
-    void nanoTime(){
-        double tiempoInicial=System.nanoTime();
-        double tiempoFinal=System.nanoTime();
-        double tiempoTotal=tiempoFinal-tiempoInicial;
-        System.out.println("tiempo de ejecucion= " +tiempoTotal/1000000000);
-    }
+      }  
   }
 
