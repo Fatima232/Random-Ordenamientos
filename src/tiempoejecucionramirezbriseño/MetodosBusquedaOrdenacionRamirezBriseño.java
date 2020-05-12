@@ -9,6 +9,7 @@ Metodos:
 -Ordenacion rapida
 Fecha:
 21/02/20
+30/04/2020
  */
 package tiempoejecucionramirezbriseño;
 import java.util.Scanner;
@@ -67,11 +68,11 @@ public class MetodosBusquedaOrdenacionRamirezBriseño {
                 System.arraycopy(numeros,0,auxNum,0,n_datos);//arreglo,desde donde,arreglo a copiar,desde donde,datos
             }
                 if(n_datos+num>tamaño){
-            System.out.println(n_datos>0?"Tienes ingresado "+n_datos+" solo puedes ingresar "+(tamaño-n_datos)+" mas":"Memoria insuficiente");//operacion ternaria
+            System.out.println(n_datos>0?"Tienes ingresado "+n_datos+" solo puedes ingresar "+(tamaño-n_datos)+" mas":"Memoria insuficiente");//operacion ternaria :else
         }else{
                numeros = new int[num+n_datos];//pase el arreglo a otro
                if (n_datos != 0) {
-                   System.arraycopy(auxNum,0,numeros,0,n_datos);//copiar arreglo
+                   System.arraycopy(auxNum,0,numeros,0,n_datos);//arreglo,desde donde,arreglo a copiar,desde donde,datos
                    cambio1 = true;
                }
                 try{//Atrapar EXEPCIONES los errores
@@ -193,5 +194,11 @@ public class MetodosBusquedaOrdenacionRamirezBriseño {
            quicksortNum(j+1,der); 
         }   
       }
+    void nanoTime(){
+        double tiempoInicial=System.nanoTime();
+        double tiempoFinal=System.nanoTime();
+        double tiempoTotal=tiempoFinal-tiempoInicial;
+        System.out.println("tiempo de ejecucion= " +tiempoTotal/1000000000);
     }
+  }
 

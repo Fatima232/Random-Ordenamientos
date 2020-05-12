@@ -35,7 +35,8 @@ public class TiempoEjecucionRamirezBriseño {
                    "Opcion 2:Mostrar arreglo\n " +
                    "Opcion 3:Busqueda\n " +
                    "Opcion 4:Ordenacion\n " +
-                   "Opcion 5:Salida");
+                   "Opcion 5:nanoTime\n" +
+                   "Opcion 6:Salida");
            opcion=leer.nextByte();
            switch(opcion){
                case 1:
@@ -142,13 +143,16 @@ public class TiempoEjecucionRamirezBriseño {
                }
                break;
                case 5:
+                   b.nanoTime();
+               break;
+               case 6:
                    System.out.println("Saliendo....");
                break;
                default:
                    System.out.println("Lo siento la opcion "+opcion+" no existe");
            }
        }
-       while(opcion!=5);
+       while(opcion!=6);
     } 
 }
               
